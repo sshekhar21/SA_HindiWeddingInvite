@@ -59,66 +59,7 @@ $('#prevPhoto').addEventListener('click',()=>showPhoto(photoIndex-1));
 $('#nextPhoto').addEventListener('click',()=>showPhoto(photoIndex+1));
 $$('#galleryIndicators button').forEach(button=>button.addEventListener('click',()=>showPhoto(Number(button.dataset.index))));
 $$('#galleryThumbs button').forEach(button=>button.addEventListener('click',()=>showPhoto(Number(button.dataset.index))));
-// RSVP submissions are sent directly to the linked Google Form.
-// The hidden iframe lets this static GitHub Pages site POST cross-origin without a backend.
-const GOOGLE_FORM_RESPONSE_URL='https://docs.google.com/forms/d/e/1FAIpQLSeUVdqhUBoEdHY8F3KegZm7fOwU-dkOE_tAcS5E7W5W9YxM-g/formResponse';
-const RSVP_FIELDS={
-  name:'entry.1914091421',
-  phone:'entry.331237101',
-  attendance:'entry.1465332909',
-  guests:'entry.750387527',
-  message:'entry.916307692'
-};
-const rsvpForm=$('#rsvpForm');
-const rsvpButton=rsvpForm.querySelector('.submit-button');
-let rsvpSubmitting=false;
-rsvpForm.addEventListener('submit',event=>{
-  event.preventDefault();
-  if(rsvpSubmitting)return;
-  if(!rsvpForm.reportValidity())return;
-  const data=new FormData(rsvpForm);
-  const iframeName='googleFormsRsvpTarget';
-  let target=document.getElementById(iframeName);
-  if(!target){
-    target=document.createElement('iframe');
-    target.name=iframeName;
-    target.id=iframeName;
-    target.title='Google Forms submission';
-    target.setAttribute('aria-hidden','true');
-    target.style.cssText='position:absolute;width:1px;height:1px;left:-9999px;border:0';
-    document.body.appendChild(target);
-  }
-  const postForm=document.createElement('form');
-  postForm.method='POST';
-  postForm.action=GOOGLE_FORM_RESPONSE_URL;
-  postForm.target=iframeName;
-  postForm.style.display='none';
-  const attendanceValue=data.get('attendance')==='Joyfully yes'?'Yes':'No';
-  const values={
-    [RSVP_FIELDS.name]:String(data.get('name')||'').trim(),
-    [RSVP_FIELDS.phone]:String(data.get('phone')||'').trim(),
-    [RSVP_FIELDS.attendance]:attendanceValue,
-    [RSVP_FIELDS.guests]:String(data.get('guests')||'1'),
-    [RSVP_FIELDS.message]:String(data.get('message')||'').trim()
-  };
-  Object.entries(values).forEach(([name,value])=>{
-    const input=document.createElement('input');
-    input.type='hidden';input.name=name;input.value=value;
-    postForm.appendChild(input);
-  });
-  document.body.appendChild(postForm);
-  rsvpSubmitting=true;
-  rsvpButton.disabled=true;
-  rsvpButton.textContent='आपका उत्तर भेजा जा रहा है…';
-  $('#formStatus').textContent='आपका उत्तर सुरक्षित रूप से भेजा जा रहा है…';
-  postForm.submit();
-  // Google Forms accepts the POST in the background; give its response time to complete.
-  window.setTimeout(()=>{
-    $('#formStatus').textContent='धन्यवाद! आपका उत्तर प्राप्त हो गया है। उत्सव में आपसे मिलने की प्रतीक्षा रहेगी।';
-    rsvpButton.textContent='उत्तर भेज दिया गया ✓';
-    postForm.remove();
-  },1800);
-});
+
 // Wedding music: attempt autoplay directly from the envelope/skip click gesture.
 // Browsers allow this more reliably because enterSite() is called by a user click.
 const weddingAudio=$('#weddingAudio');
