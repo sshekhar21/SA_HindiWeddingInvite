@@ -32,12 +32,12 @@ function makeHeroLanterns(){
   heroLanternTimer=setInterval(()=>addHeroLantern(),3600);
 }
 // Wedding-day countdown uses India Standard Time. Event time is not yet specified.
-function updateCountdown(){const target=new Date('2026-11-26T00:00:00+05:30').getTime(),diff=Math.max(0,target-Date.now());$('#days').textContent=String(Math.floor(diff/86400000)).padStart(2,'0');$('#hours').textContent=String(Math.floor(diff%86400000/3600000)).padStart(2,'0');$('#minutes').textContent=String(Math.floor(diff%3600000/60000)).padStart(2,'0');$('#seconds').textContent=String(Math.floor(diff%60000/1000)).padStart(2,'0')}
+function updateCountdown(){const hindiDigits=value=>String(value).replace(/[0-9]/g,d=>'०१२३४५६७८९'[Number(d)]);const target=new Date('2026-11-26T00:00:00+05:30').getTime(),diff=Math.max(0,target-Date.now());$('#days').textContent=hindiDigits(String(Math.floor(diff/86400000)).padStart(2,'0'));$('#hours').textContent=hindiDigits(String(Math.floor(diff%86400000/3600000)).padStart(2,'0'));$('#minutes').textContent=hindiDigits(String(Math.floor(diff%3600000/60000)).padStart(2,'0'));$('#seconds').textContent=hindiDigits(String(Math.floor(diff%60000/1000)).padStart(2,'0'))}
 updateCountdown();setInterval(updateCountdown,1000);
 // Gallery placeholders are deliberately local and easy to replace with real couple photographs.
 const gallerySlides=[
-  {src:'assets/images/painted-moments-01.png',alt:'Anjali and Shashank together in an ornate floral wedding frame'},
-  {src:'assets/images/painted-moments-02.png',alt:'Anjali and Shashank seated together in an ornate floral wedding frame'}
+  {src:'assets/images/painted-moments-01.png',alt:'पुष्पों से सजे फ्रेम में अंजलि और शशांक'},
+  {src:'assets/images/painted-moments-02.png',alt:'पुष्पों से सजे फ्रेम में साथ बैठे अंजलि और शशांक'}
 ];
 let photoIndex=0;
 function showPhoto(index){
@@ -109,13 +109,13 @@ rsvpForm.addEventListener('submit',event=>{
   document.body.appendChild(postForm);
   rsvpSubmitting=true;
   rsvpButton.disabled=true;
-  rsvpButton.textContent='SENDING YOUR RSVP…';
-  $('#formStatus').textContent='Sending your response securely to our RSVP form…';
+  rsvpButton.textContent='आपका उत्तर भेजा जा रहा है…';
+  $('#formStatus').textContent='आपका उत्तर सुरक्षित रूप से भेजा जा रहा है…';
   postForm.submit();
   // Google Forms accepts the POST in the background; give its response time to complete.
   window.setTimeout(()=>{
-    $('#formStatus').textContent='Thank you! Your RSVP has been submitted. We look forward to celebrating with you.';
-    rsvpButton.textContent='RSVP SUBMITTED ✓';
+    $('#formStatus').textContent='धन्यवाद! आपका उत्तर प्राप्त हो गया है। उत्सव में आपसे मिलने की प्रतीक्षा रहेगी।';
+    rsvpButton.textContent='उत्तर भेज दिया गया ✓';
     postForm.remove();
   },1800);
 });
@@ -126,8 +126,8 @@ const soundToggle=$('#soundToggle');
 function updateMusicButton(isPlaying){
   soundToggle.classList.toggle('is-playing',isPlaying);
   soundToggle.setAttribute('aria-pressed',String(isPlaying));
-  soundToggle.setAttribute('aria-label',isPlaying?'Pause wedding music':'Play wedding music');
-  soundToggle.setAttribute('title',isPlaying?'Pause wedding music':'Play wedding music');
+  soundToggle.setAttribute('aria-label',isPlaying?'विवाह संगीत रोकें':'विवाह संगीत चलाएँ');
+  soundToggle.setAttribute('title',isPlaying?'विवाह संगीत रोकें':'विवाह संगीत चलाएँ');
 }
 function startWeddingMusic(){
   if(!weddingAudio)return;

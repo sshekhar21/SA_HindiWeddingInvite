@@ -877,3 +877,18 @@ body.music-ready .sound-toggle{
   background:#80594e;
   color:#fffaf4;
 }
+
+
+/* Hindi typography: preserve the original design while giving Devanagari elegant, readable forms. */
+:root{--serif:'Tiro Devanagari Hindi',serif;--sans:'Mukta',sans-serif;--script:'Yatra One',serif}
+html[lang="hi"] body{font-family:'Mukta',sans-serif;letter-spacing:0}
+html[lang="hi"] .hero h1,html[lang="hi"] .section-heading h2,html[lang="hi"] .gallery-heading h2,html[lang="hi"] .countdown-content h2 em,html[lang="hi"] .couple-name-block h2{font-family:'Yatra One','Tiro Devanagari Hindi',serif;font-style:normal;font-weight:400;line-height:1.25}
+html[lang="hi"] .eyebrow,html[lang="hi"] .hero-date,html[lang="hi"] .outline-link,html[lang="hi"] .intro-prompt,html[lang="hi"] .skip-intro,html[lang="hi"] .event-tag,html[lang="hi"] .event-date,html[lang="hi"] .date-words,html[lang="hi"] .section-index,html[lang="hi"] .closing-date,html[lang="hi"] .count-item span,html[lang="hi"] .submit-button,html[lang="hi"] #rsvpForm>label,html[lang="hi"] #rsvpForm legend{letter-spacing:0.2px}
+html[lang="hi"] .hero h1{font-size:clamp(48px,9vw,88px);line-height:1.25;gap:0}
+html[lang="hi"] .hero h1 i{font-family:'Tiro Devanagari Hindi',serif;font-size:20px;font-style:normal}
+html[lang="hi"] .invitation-text .couple-name-block h2{font-family:'Yatra One','Tiro Devanagari Hindi',serif;font-style:normal;line-height:1.25}
+html[lang="hi"] .parent-line,html[lang="hi"] .invite-copy,html[lang="hi"] .invite-blessing,html[lang="hi"] .event-description,html[lang="hi"] .section-heading>p:last-of-type,html[lang="hi"] .gallery-heading>p:last-of-type,html[lang="hi"] .closing-line,html[lang="hi"] .with-love{font-family:'Tiro Devanagari Hindi',serif;font-style:normal;line-height:1.6}
+html[lang="hi"] .katha-time,html[lang="hi"] .katha-map-button,html[lang="hi"] .event-tag{font-family:'Mukta',sans-serif}
+html[lang="hi"] .countdown-content h2{font-family:'Tiro Devanagari Hindi',serif;line-height:1.35}
+html[lang="hi"] .with-love strong{font-family:'Yatra One','Tiro Devanagari Hindi',serif;font-size:clamp(24px,5vw,34px);line-height:1.5}
+html[lang="hi"] #rsvpForm input,html[lang="hi"] #rsvpForm textarea{font-family:'Mukta',sans-serif}
