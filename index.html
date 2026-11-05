@@ -1,82 +1,76 @@
 <!doctype html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f8e9e4"><meta name="description" content="अंजलि और शशांक आपको 26 नवंबर 2026 को अपने विवाह समारोह में सादर आमंत्रित करते हैं।">
-  <title>अंजलि और शशांक — विवाह निमंत्रण</title>
+  <meta name="theme-color" content="#f8e9e4"><meta name="description" content="Anjali & Shashank invite you to celebrate their wedding on 26 November 2026.">
+  <title>Anjali & Shashank — A Wedding Invitation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    html[lang="hi"] body { font-family: "Noto Sans Devanagari", sans-serif; }
-    html[lang="hi"] h1, html[lang="hi"] h2, html[lang="hi"] h3,
-    html[lang="hi"] .couple-name-block, html[lang="hi"] .closing-line,
-    html[lang="hi"] .with-love { font-family: "Noto Serif Devanagari", serif; }
-  </style>
 </head>
 <body>
   <div class="scroll-progress" id="scrollProgress"></div>
-  <button class="sound-toggle" id="soundToggle" type="button" aria-label="विवाह का संगीत चलाएँ" title="विवाह का संगीत चलाएँ" aria-pressed="false">♫</button>
+  <button class="sound-toggle" id="soundToggle" type="button" aria-label="Play wedding music" title="Play wedding music" aria-pressed="false">♫</button>
   <audio id="weddingAudio" preload="none" loop>
     <source src="assets/audio/wedding-music.mp3" type="audio/mpeg">
   </audio>
 
-  <section class="intro" id="intro" aria-label="विवाह निमंत्रण खोलने के लिए स्पर्श करें">
-    <img class="intro-art" src="assets/images/opening-envelope.png" alt="संगमरमर के आसन पर सुनहरी मुहर वाला हाथीदाँत रंग का विवाह लिफ़ाफ़ा, फूलों और सूर्यास्त के महल से घिरा हुआ">
+  <section class="intro" id="intro" aria-label="Tap to open the wedding invitation">
+    <img class="intro-art" src="assets/images/opening-envelope.png" alt="An ivory wedding envelope with a golden seal on a marble pedestal, surrounded by flowers and a palace at sunset">
     <div class="intro-vignette"></div>
-    <button class="seal-hotspot" id="openInvite" aria-label="निमंत्रण खोलें"><span class="seal-pulse"></span></button>
-    <p class="intro-prompt">निमंत्रण खोलने के लिए सुनहरी मुहर दबाएँ</p>
-    <button class="skip-intro" id="skipIntro">प्रस्तावना छोड़ें <span>↗</span></button>
+    <button class="seal-hotspot" id="openInvite" aria-label="Open invitation"><span class="seal-pulse"></span></button>
+    <p class="intro-prompt">TAP THE GOLDEN SEAL TO OPEN</p>
+    <button class="skip-intro" id="skipIntro">SKIP INTRO <span>↗</span></button>
   </section>
 
   <main id="site" class="site is-hidden">
     <div class="floating-petals" aria-hidden="true"></div>
     <div class="site-twinkle-stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <section class="hero" id="home">
-      <img class="hero-art" src="assets/images/palace-watercolor.png" alt="सूर्यास्त के समय जलाशय के किनारे बना महल">
+      <img class="hero-art" src="assets/images/palace-watercolor.png" alt="Watercolour palace beside a reflective pool at sunset">
       <div class="hero-wash"></div>
       <div class="hero-lantern-layer" id="heroLanterns" aria-hidden="true"></div>
       <span class="hero-lantern lantern-a" aria-hidden="true">✧</span><span class="hero-lantern lantern-b" aria-hidden="true">✧</span>
       <div class="hero-copy reveal">
-        <p class="eyebrow">अपने परिवारों के साथ</p>
+        <p class="eyebrow">TOGETHER WITH OUR FAMILIES</p>
         <h1><span>Shashank</span><i>&</i><span>Anjali</span></h1>
         <div class="hero-divider"><span>✧</span><b></b><span>❦</span><b></b><span>✧</span></div>
-        <p class="hero-date">गुरुवार <i>·</i> 26 नवंबर 2026</p>
-        <a class="outline-link" href="#invitation">तिथि सुरक्षित रखें <span>↓</span></a>
+        <p class="hero-date">THURSDAY <i>·</i> 26 NOVEMBER 2026</p>
+        <a class="outline-link" href="#invitation">SAVE THE DATE <span>↓</span></a>
       </div>
     </section>
 
-    <section class="invitation invitation-frame-section" id="invitation" aria-label="विवाह निमंत्रण">
+    <section class="invitation invitation-frame-section" id="invitation" aria-label="Wedding invitation">
       <img class="invitation-frame-art" src="assets/images/invitation-background.png" alt="" aria-hidden="true">
       <img class="invitation-border-art" src="assets/images/invitation-border.png" alt="" aria-hidden="true">
       <div class="invitation-text">
-        <img class="ganesh-image" src="assets/images/ganesh-ji.png" alt="श्री गणेश जी" />
-        <p class="invite-blessing-heading">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥</p>
-		<p class="invite-copy">हम आपको सादर आमंत्रित करते हैं</p>
-        <p class="invite-copy">हमारे शुभ विवाह के पावन अवसर पर</p>
-        <img class="lotus-image" src="assets/images/lotus-ornament.png" alt="गुलाबी कमल की सजावट" />
-        <div class="couple-name-block"><h2>Shashank</h2><p class="parent-line">सुपुत्र: श्रीमती मनीषा एवं श्री आर. के. चौहान</p></div>
+        <img class="ganesh-image" src="assets/images/ganesh-ji.png" alt="Lord Ganesha" />
+        <p class="invite-blessing-heading">With the blessings of the divine</p>
+		<p class="invite-copy">we request the honour of your presence</p>
+        <p class="invite-copy">at the wedding celebration of</p>
+        <img class="lotus-image" src="assets/images/lotus-ornament.png" alt="Pink lotus ornament" />
+        <div class="couple-name-block"><h2>Shashank</h2><p class="parent-line">S/O Mrs. Manisha &amp; Mr. R.K. Chauhan</p></div>
         <div class="name-ampersand">&amp;</div>
-        <div class="couple-name-block"><h2>Anjali</h2><p class="parent-line">सुपुत्री: श्रीमती सुनीता एवं श्री राम नरेश भगत</p></div>
+        <div class="couple-name-block"><h2>Anjali</h2><p class="parent-line">D/O Mrs. Sunita &amp; Mr. Ram Naresh Bhagat</p></div>
         <div class="ornamental-rule"><span>❧</span><i></i><span>❧</span></div>
-        <p class="date-words"><span>गुरुवार</span><strong>26</strong><span>नवंबर · 2026</span></p>
-        <p class="invite-blessing">आपकी उपस्थिति और शुभाशीष<br>हमारे उत्सव को पूर्णता प्रदान करेंगे।</p>
+        <p class="date-words"><span>THURSDAY</span><strong>26</strong><span>NOVEMBER · 2026</span></p>
+        <p class="invite-blessing">Your presence and blessings will make<br>our celebration truly complete.</p>
         
       </div>
     </section>
     <section class="events section-paper" id="events">
-      <header class="section-heading reveal"><h2>शुभ समारोह</h2><p>चार मंगलमय रस्मों के साथ उत्सव की शुरुआत।</p><div class="heading-flourish"><img class="events-heading-ornament" src="assets/images/events-heading-ornament.png" alt="" aria-hidden="true"></div></header>
+      <header class="section-heading reveal"><h2>Our Events</h2><p>A celebration journey, in four ceremonies.</p><div class="heading-flourish"><img class="events-heading-ornament" src="assets/images/events-heading-ornament.png" alt="" aria-hidden="true"></div></header>
       <div class="event-list">
         <article class="katha-book reveal">
           <img class="katha-book-frame" src="assets/images/satyanarayan-book-frame.png" alt="" aria-hidden="true">
           <div class="katha-book-content">
             <img class="katha-floral-quill" src="assets/images/satyanarayan-floral-quill.png" alt="Ornate blue ceremonial quill surrounded by pink and ivory flowers">
             
-            <h3>सत्यनारायण कथा</h3>
-            <p class="event-description">आगामी जीवन की मंगलमय यात्रा के लिए ईश्वर का आशीर्वाद पाने हेतु पवित्र पूजा-अर्चना।</p>
-            <div class="katha-time"><span>तिथि</span><strong>23 नवंबर 2026</strong></div>
-            <span class="event-tag">पूजा और आशीर्वाद की मंगलमय सुबह</span>
-            <span class="katha-map-button"><span aria-hidden="true">⌖</span> निवास स्थान पर</span>
+            <h3>Satyanarayan Katha</h3>
+            <p class="event-description">A sacred ritual prayer and worship ceremony, seeking divine blessings for the journey ahead.</p>
+            <div class="katha-time"><span>DATE</span><strong>23 November 2026</strong></div>
+            <span class="event-tag">A MORNING OF PRAYER & BLESSINGS</span>
+            <span class="katha-map-button"><span aria-hidden="true">⌖</span> @Residence</span>
           </div>
           
         </article>
@@ -85,11 +79,11 @@
           <div class="katha-book-content">
             <img class="katha-floral-quill" src="assets/images/matkor-floral-quill.png" alt="Ornate blue ceremonial quill surrounded by pink and ivory flowers">
             
-            <h3>मटकोर एवं धनबत्ती</h3>
-            <p class="event-description">प्रेम और परंपराओं से जुड़ी पारिवारिक रस्में, जो सभी को उत्सव के इस अवसर पर एक साथ लाती हैं।</p>
-            <div class="katha-time"><span>तिथि</span><strong>23 नवंबर 2026</strong></div>
-            <span class="event-tag">परंपरा · परिवार · अपनापन</span>
-			<a class="katha-map-button" href="https://maps.app.goo.gl/C3QEbq4nJo3tse7V8" target="_blank" rel="noopener"><span aria-hidden="true">⌖</span> नक्शे पर देखें</a>
+            <h3>Matkor &amp; Dhanbatti</h3>
+            <p class="event-description">Traditional family rituals, rooted in love and custom, bringing everyone together in celebration.</p>
+            <div class="katha-time"><span>DATE</span><strong>23 November 2026</strong></div>
+            <span class="event-tag">TRADITION · FAMILY · TOGETHERNESS</span>
+			<a class="katha-map-button" href="https://maps.app.goo.gl/C3QEbq4nJo3tse7V8" target="_blank" rel="noopener"><span aria-hidden="true">⌖</span> VIEW ON MAP</a>
           </div>
           
         </article>
@@ -98,11 +92,11 @@
           <div class="katha-book-content">
             <img class="katha-floral-quill" src="assets/images/haldi-floral-quill.png" alt="Ornate blue ceremonial quill surrounded by pink and ivory flowers">
             
-            <h3>हल्दी</h3>
-            <p class="event-description">हल्दी, हँसी-खुशी और आशीर्वाद से भरा उल्लासमय समारोह, जिसमें हम विवाह के शुभ दिन की तैयारी करेंगे।</p>
-            <div class="katha-time"><span>तिथि</span><strong>24 नवंबर 2026</strong></div>
-            <span class="event-tag">खुशियाँ · हँसी · आशीर्वाद</span>
-			<a class="katha-map-button" href="https://maps.app.goo.gl/C3QEbq4nJo3tse7V8" target="_blank" rel="noopener"><span aria-hidden="true">⌖</span> नक्शे पर देखें</a>
+            <h3>Haldi</h3>
+            <p class="event-description">A joyful celebration filled with turmeric, laughter and blessings as we prepare for the wedding day.</p>
+            <div class="katha-time"><span>DATE</span><strong>24 November 2026</strong></div>
+            <span class="event-tag">SUNSHINE · LAUGHTER · BLESSINGS</span>
+			<a class="katha-map-button" href="https://maps.app.goo.gl/C3QEbq4nJo3tse7V8" target="_blank" rel="noopener"><span aria-hidden="true">⌖</span> VIEW ON MAP</a>
           </div>
           
         </article>
@@ -111,71 +105,71 @@
           <div class="katha-book-content">
             <img class="katha-floral-quill" src="assets/images/shadi-floral-quill.png" alt="Ornate blue ceremonial quill surrounded by pink and ivory flowers">
             
-            <h3>शुभ विवाह</h3>
-            <p class="event-description">दो दिल, दो परिवार और एक खूबसूरत नई शुरुआत। हमारे विवाह के इस पावन अवसर पर शामिल हों।</p>
-            <div class="katha-time"><span>तिथि</span><strong>26 नवंबर 2026</strong></div>
-            <span class="event-tag">दो दिलों के एक होने का शुभ दिन</span>
-			<a class="katha-map-button" href="https://maps.app.goo.gl/mZM5TXyn72skAE5W7" target="_blank" rel="noopener"><span aria-hidden="true">⌖</span> नक्शे पर देखें</a>
+            <h3>Wedding</h3>
+            <p class="event-description">Two hearts, two families and one beautiful beginning. Join us as we tie the knot.</p>
+            <div class="katha-time"><span>DATE</span><strong>26 November 2026</strong></div>
+            <span class="event-tag">THE DAY WE SAY “I DO”</span>
+			<a class="katha-map-button" href="https://maps.app.goo.gl/mZM5TXyn72skAE5W7" target="_blank" rel="noopener"><span aria-hidden="true">⌖</span> VIEW ON MAP</a>
           </div>
           
         </article>
       
-      <p class="section-index"><span>02</span> शुभ आयोजन</p>
+      <p class="section-index"><span>02</span> THE CELEBRATIONS</p>
     </section>
 
     <section class="gallery" id="gallery">
       <div class="gallery-heading reveal">
         
-        <h2>यादों के रंग</h2>
-        <p>हमारी साथ लिखी जा रही कहानी के कुछ खूबसूरत पल।</p>
+        <h2>Painted moments</h2>
+        <p>A few pages of the story we are writing.</p>
         <div class="gallery-heading-flourish"><img src="assets/images/events-heading-ornament.png" alt="" aria-hidden="true"></div>
       </div>
       <div class="gallery-layout reveal">
-        <button class="gallery-arrow" id="prevPhoto" type="button" aria-label="पिछली तस्वीर">‹</button>
+        <button class="gallery-arrow" id="prevPhoto" type="button" aria-label="Previous photograph">‹</button>
         <div class="gallery-frame">
           <div class="gallery-photo" id="galleryPhoto">
             <img class="gallery-slide-image" src="assets/images/painted-moments-01.png" alt="Anjali and Shashank together in an ornate floral wedding frame">
           </div>
         </div>
-        <button class="gallery-arrow" id="nextPhoto" type="button" aria-label="अगली तस्वीर">›</button>
+        <button class="gallery-arrow" id="nextPhoto" type="button" aria-label="Next photograph">›</button>
       </div>
       <div class="frame-caption" id="photoCaption"></div>
-      <div class="gallery-indicators" id="galleryIndicators" aria-label="तस्वीर चुनें">
-        <button class="selected" type="button" data-index="0" aria-label="पहली तस्वीर देखें"></button>
-        <button type="button" data-index="1" aria-label="दूसरी तस्वीर देखें"></button>
+      <div class="gallery-indicators" id="galleryIndicators" aria-label="Choose photograph">
+        <button class="selected" type="button" data-index="0" aria-label="Show photograph one"></button>
+        <button type="button" data-index="1" aria-label="Show photograph two"></button>
       </div>
       <div class="gallery-thumbnails" id="galleryThumbs">
-        <button class="selected" type="button" data-index="0" aria-label="पहली तस्वीर देखें"><img src="assets/images/painted-moments-01.png" alt=""></button>
-        <button type="button" data-index="1" aria-label="दूसरी तस्वीर देखें"><img src="assets/images/painted-moments-02.png" alt=""></button>
+        <button class="selected" type="button" data-index="0" aria-label="Show photograph one"><img src="assets/images/painted-moments-01.png" alt=""></button>
+        <button type="button" data-index="1" aria-label="Show photograph two"><img src="assets/images/painted-moments-02.png" alt=""></button>
       </div>
-      <p class="section-index"><span>03</span> हमारी यादें</p>
+      <p class="section-index"><span>03</span> OUR MEMORIES</p>
     </section>
 
     <section class="rsvp section-paper" id="rsvp" style="background-image: url('assets/images/rsvp-page-background.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
       <div class="rsvp-decoration" aria-hidden="true">❦</div>
-      <div class="rsvp-card reveal"><header class="section-heading"><h2>क्या आप हमारे साथ होंगे?</h2><p>हमारे उत्सव में आपका स्थान आपका इंतज़ार कर रहा है।</p></header>
+      <div class="rsvp-card reveal"><header class="section-heading"><h2>Will you be there?</h2><p>A seat at our table is already yours.</p></header>
         <form id="rsvpForm">
-          <label>आपका नाम<input name="name" autocomplete="name" placeholder="पूरा नाम" required></label>
-          <label>फ़ोन नंबर<input name="phone" type="tel" autocomplete="tel" placeholder="+91 ..."></label>
-          <fieldset><legend>क्या आप समारोह में शामिल होंगे?</legend><label class="radio-option"><input type="radio" name="attendance" value="हाँ, खुशी-खुशी" checked><span>हाँ, खुशी-खुशी</span></label><label class="radio-option"><input type="radio" name="attendance" value="खेद है, नहीं आ पाएँगे"><span>खेद है, नहीं आ पाएँगे</span></label></fieldset>
-          <label>मेहमानों की संख्या<input name="guests" type="number" min="1" max="10" value="1" required></label>
-          <label>हमारे लिए एक संदेश<textarea name="message" rows="3" placeholder="आपके आशीर्वाद एवं शुभकामनाएँ..."></textarea></label>
-          <button class="submit-button" type="submit">अपनी उपस्थिति की पुष्टि भेजें <span>✧</span></button><p class="form-status" id="formStatus">आपका जवाब हमारी विवाह अतिथि सूची में जोड़ दिया जाएगा।</p>
+          <label>Your name<input name="name" autocomplete="name" placeholder="Full name" required></label>
+          <label>Phone number<input name="phone" type="tel" autocomplete="tel" placeholder="+91 ..."></label>
+          <fieldset><legend>Will you be joining us?</legend><label class="radio-option"><input type="radio" name="attendance" value="Joyfully yes" checked><span>Joyfully yes</span></label><label class="radio-option"><input type="radio" name="attendance" value="Regretfully no"><span>Regretfully no</span></label></fieldset>
+          <label>Number of guests<input name="guests" type="number" min="1" max="10" value="1" required></label>
+          <label>A message for us<textarea name="message" rows="3" placeholder="Your blessings & wishes..."></textarea></label>
+          <button class="submit-button" type="submit">SEND YOUR RSVP <span>✧</span></button><p class="form-status" id="formStatus">Your response will be added to our wedding guest list.</p>
         </form>
       </div>
-      <p class="section-index"><span>04</span> कृपया जवाब दें</p>
+      <p class="section-index"><span>04</span> KINDLY REPLY</p>
     </section>
 
     <section class="countdown" id="countdown">
       <img class="countdown-art" src="assets/images/palace-watercolor.png" alt="Palace at sunset">
       <div class="countdown-overlay"></div>
-      <div class="countdown-content reveal"><p class="eyebrow">शुभ दिन अब आने ही वाला है</p><h2>हमारे <br><em>सदा के साथ</em> होने की उलटी गिनती</h2>
-        <div class="count-grid"><div class="count-item"><strong id="days">00</strong><span>दिन</span></div><div class="count-item"><strong id="hours">00</strong><span>घंटे</span></div><div class="count-item"><strong id="minutes">00</strong><span>मिनट</span></div><div class="count-item"><strong id="seconds">00</strong><span>सेकंड</span></div></div>
-        <div class="heading-flourish">✧ ── ❦ ── ✧</div><p class="closing-line">जल्दी आइए, देर तक रुकिए।<br>हमारे साथ <em>बेख़बर होकर</em> नाचिए।</p>
-        <p class="with-love">ढेर सारे प्यार के साथ<br><strong>शशांक, अंजलि</strong><br>एवं हमारे परिवार</p>
-        <p class="closing-date">गुरुवार · 26 नवंबर 2026</p>
+      <div class="countdown-content reveal"><p class="eyebrow">THE BIG DAY IS ALMOST HERE</p><h2>Counting Down to<br><em>Forever</em></h2>
+        <div class="count-grid"><div class="count-item"><strong id="days">00</strong><span>DAYS</span></div><div class="count-item"><strong id="hours">00</strong><span>HOURS</span></div><div class="count-item"><strong id="minutes">00</strong><span>MINUTES</span></div><div class="count-item"><strong id="seconds">00</strong><span>SECONDS</span></div></div>
+        <div class="heading-flourish">✧ ── ❦ ── ✧</div><p class="closing-line">Come early. Stay late.<br>Dance <em>badly</em> with us.</p>
+        <p class="with-love">With all our love<br><strong>Shashank, Anjali</strong><br>&amp; our families</p>
+        <p class="closing-date">THURSDAY · 26 NOVEMBER 2026</p>
       </div>
-      <footer>प्यार से बनाया <span>♥</span> शशांक एवं अंजलि</footer>
+      <footer>MADE WITH LOVE <span>♥</span> SHASHANK &amp; ANJALI</footer>
     </section>
   </main>
   <script src="script.js"></script>
