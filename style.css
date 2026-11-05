@@ -1,0 +1,879 @@
+:root{--ink:#60463f;--muted:#987a70;--gold:#b98d52;--gold2:#d7b77f;--rose:#f2d7d2;--paper:#fffaf4;--sage:#a8b6a0;--line:#d9bd99;--serif:'Cormorant Garamond',serif;--sans:'DM Sans',sans-serif;--script:'Great Vibes',cursive}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300}button,input,textarea{font:inherit}button{cursor:pointer}.is-hidden{display:none!important}.scroll-progress{position:fixed;z-index:50;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#c18b5a,#e8cda0)}.sound-toggle{position:fixed;z-index:40;right:18px;bottom:18px;width:42px;height:42px;border-radius:50%;border:1px solid #c7a77c;background:#fffaf0e8;color:#8b654e;font-size:22px;box-shadow:0 5px 18px #5d40351c}.intro{height:100svh;min-height:600px;position:relative;overflow:hidden;background:#eecbc4;display:grid;place-items:center;isolation:isolate;transition:opacity .9s ease,transform 1.1s ease}.intro-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 52%;z-index:-2}.intro-vignette{position:absolute;inset:0;background:linear-gradient(0deg,#704c3929,transparent 30%,transparent 75%,#704c3920);pointer-events:none}.seal-hotspot{position:absolute;left:50%;top:51.5%;width:clamp(70px,17vw,120px);height:clamp(70px,17vw,120px);transform:translate(-50%,-50%);border:0;border-radius:50%;background:transparent}.seal-pulse{position:absolute;inset:0;border:1px solid #f8dba0;border-radius:50%;box-shadow:0 0 0 0 #f6d48c88;animation:pulse 2.3s infinite}.intro-prompt{position:absolute;bottom:12%;left:0;right:0;text-align:center;color:#775638;font:500 10px var(--sans);letter-spacing:4px;text-shadow:0 1px 8px #fff8}.skip-intro{position:absolute;right:22px;bottom:24px;border:1px solid #b99467;background:#fff9edbb;color:#72513e;border-radius:30px;padding:10px 15px;font-size:9px;letter-spacing:2px}.skip-intro span{padding-left:8px}.intro.opening .intro-art{transform:scale(1.07);filter:brightness(1.08);transition:transform 1.15s ease,filter 1s ease}.intro.fade{opacity:0;transform:scale(1.025);pointer-events:none}@keyframes pulse{0%{box-shadow:0 0 0 0 #f6d48c88;opacity:.9}70%{box-shadow:0 0 0 18px #f6d48c00;opacity:.2}100%{box-shadow:0 0 0 0 #f6d48c00;opacity:0}}
+.hero{min-height:100svh;position:relative;overflow:hidden;display:grid;place-items:center;text-align:center;isolation:isolate;padding:90px 20px 100px;background:#f4d8d0}.hero-art,.countdown-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 65%;z-index:-2}.hero-wash{position:absolute;inset:0;background:linear-gradient(180deg,#f9e1df77 0%,#fff0df45 50%,#c88d7d35 100%);z-index:-1}.hero-copy{max-width:760px;position:relative;margin-top:-2vh}.eyebrow{font-size:9px;letter-spacing:3.5px;font-weight:500;color:#9b725b;margin:0 0 22px}.hero-intro-script{font:italic 24px var(--serif);color:#806357;margin:0 0 8px}.hero h1{font:clamp(65px,12vw,120px)/.85 var(--script);font-weight:400;color:#7e514a;text-shadow:0 2px 18px #fff9;margin:12px 0 24px;display:grid;justify-items:center}.hero h1 i{font:italic 28px var(--serif);color:#b88c5e;margin:8px 0}.hero-divider{display:flex;align-items:center;justify-content:center;gap:12px;color:#b18a5b;margin:20px auto}.hero-divider b{width:54px;height:1px;background:#b18a5b88}.hero-date{font-size:10px;letter-spacing:3px;color:#795b4c;margin:25px 0}.hero-date i{color:#b88a55;padding:0 5px}.outline-link{display:inline-flex;align-items:center;gap:22px;text-decoration:none;border:1px solid #a77e59;color:#795642;padding:13px 21px;border-radius:40px;font-size:9px;letter-spacing:2px;background:#fff8ed66;transition:.3s}.outline-link:hover{background:#fff9ef}.outline-link span{font-size:16px}.hero-bottom{position:absolute;bottom:25px;left:0;right:0;display:flex;justify-content:space-between;padding:0 28px;color:#fff9;font-size:8px;letter-spacing:2px;text-shadow:0 1px 8px #543c36}
+.section-paper{position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 10%,#fff 0,#fffaf4 48%,#f6e9df 100%);padding:105px 22px 115px}.invitation{min-height:820px;display:grid;place-items:center}.invitation:before,.invitation:after{content:'✿';position:absolute;color:#c88d8b1c;font-size:180px;top:5%;left:-40px;transform:rotate(-25deg)}.invitation:after{left:auto;right:-45px;top:auto;bottom:5%;transform:rotate(25deg)}.invitation-card{width:min(92vw,620px);padding:12px;border:1px solid #c49a66;background:linear-gradient(135deg,#fffdf7,#f9eee1);box-shadow:0 18px 55px #74553a18;position:relative}.invitation-card:before{content:'';position:absolute;inset:7px;border:1px solid #d9bc91;pointer-events:none}.card-inner{min-height:570px;border:1px solid #e1cba9;margin:7px;padding:58px 25px 38px;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#fffefa 0,#fff9f0 70%,#f7eadb 100%)}.card-inner:before,.card-inner:after{content:'❧';position:absolute;color:#c49a65;font-size:40px;opacity:.8}.card-inner:before{top:12px;left:17px;transform:rotate(-45deg)}.card-inner:after{bottom:12px;right:17px;transform:rotate(135deg)}.card-flower{font-size:36px;color:#b99163;margin-bottom:16px}.invite-copy{font:italic 21px/1.35 var(--serif);color:#8a6d5e;margin:0 0 24px}.invitation-card h2{font:clamp(49px,8vw,76px)/.9 var(--script);font-weight:400;color:#82584d;margin:0}.invitation-card h2 em{font:italic 24px var(--serif);color:#bd9868}.ornamental-rule{display:flex;align-items:center;gap:12px;color:#b38b5e;margin:22px 0}.ornamental-rule i{width:90px;height:1px;background:#c8a578}.date-words{display:grid;gap:3px;margin:0;color:#a37c58;font-size:9px;letter-spacing:4px}.date-words strong{font:64px/.95 var(--serif);color:#765449;font-weight:400;letter-spacing:0}.invite-blessing{font:italic 18px/1.4 var(--serif);color:#94786a;margin:25px 0 0}.card-bottom-flower{font-size:27px;color:#bd9567;margin-top:18px}.hanging-ornament{position:absolute;top:0;color:#c19a68;font-size:22px;text-align:center;line-height:1}.hanging-ornament:before{content:'';display:block;height:100px;width:1px;background:#c19a68;margin:auto}.hanging-ornament span{display:block;font-size:26px}.left-ornament{left:13%}.right-ornament{right:13%}.section-index{position:absolute;bottom:27px;left:0;right:0;text-align:center;font-size:8px;letter-spacing:3px;color:#b1957a}.section-index span{color:#98704f;margin-right:10px}
+.section-heading{text-align:center;margin:0 auto 55px}.section-heading h2,.gallery-heading h2{font:clamp(48px,8vw,72px)/.95 var(--script);font-weight:400;color:#80584e;margin:0 0 14px}.section-heading>p:last-of-type,.gallery-heading>p:last-of-type{font:italic 19px var(--serif);color:#9c8173;margin:0}.heading-flourish{color:#bd9668;margin-top:22px;letter-spacing:4px}.events{padding-top:110px;padding-bottom:125px;background-image:url('assets/images/event-page-background.png');background-size:100% 100%;background-position:center center;background-repeat:no-repeat}.event-list{width:min(100%,900px);margin:auto;display:grid;gap:25px}.event-card{min-height:260px;display:grid;grid-template-columns:230px 1fr 52px;align-items:center;gap:35px;padding:20px 25px 20px 20px;background:#fffdf8d9;border:1px solid #e5d2b8;box-shadow:0 12px 35px #70513b0c;position:relative}.event-card:before{content:'';position:absolute;inset:7px;border:1px solid #efdfca;pointer-events:none}.event-card.reverse{grid-template-columns:230px 1fr 52px}.event-card.reverse .event-art{order:2}.event-card.reverse .event-info{order:1}.event-card.reverse .event-number{order:3}.event-art{height:220px;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle,#fff 0,#f4e5d8 72%,#e8d1bc 100%)}.art-halo{position:absolute;width:150px;height:150px;border:1px solid #c7a36f;border-radius:50%;box-shadow:0 0 0 9px #c7a36f15,0 0 0 18px #c7a36f0d}.art-symbol{font:110px var(--serif);color:#a78358;text-shadow:0 3px 0 #f8e7c6;z-index:1}.art-flower{position:absolute;right:27px;bottom:20px;font-size:50px;color:#bd8583;opacity:.8}.mehendi-art{background:radial-gradient(circle,#fff9ef,#dce5d6)}.mehendi-art .art-symbol{color:#64816b}.matkor-art{background:radial-gradient(circle,#fff8e8,#f4d7c0)}.matkor-art .art-symbol{color:#b98258}.wedding-art{background:radial-gradient(circle,#fff9f0,#e8d9d0)}.wedding-art .art-symbol{color:#a77d54}.event-info{position:relative;z-index:1}.event-date{font-size:9px;letter-spacing:2px;color:#a17c5c;margin:0 0 12px}.event-date b{color:#c39b6c;padding:0 4px}.event-info h3{font:clamp(30px,4vw,43px)/1.05 var(--script);font-weight:400;color:#80564c;margin:0 0 12px}.event-description{font:italic 19px/1.4 var(--serif);color:#94796b;max-width:470px;margin:0 0 16px}.event-tag{font-size:8px;letter-spacing:1.7px;color:#ae8a64}.event-number{font:27px var(--serif);color:#d0b28b;text-align:center;align-self:start;padding-top:10px}.event-note{text-align:center;font:italic 16px var(--serif);color:#a28a79;margin:30px 0 0}
+.gallery{position:relative;text-align:center;padding:110px 20px 125px;overflow:hidden;background-image:url('assets/images/painted-moments-background.png');background-size:100% 100%;background-position:center center;background-repeat:no-repeat}.gallery:before,.gallery:after{content:'✿';position:absolute;font-size:180px;color:#9f64741b;top:5%;left:-40px}.gallery:after{top:auto;left:auto;right:-40px;bottom:0}.gallery-heading{position:relative;z-index:1}.gallery-layout{display:flex;align-items:center;justify-content:center;gap:clamp(10px,3vw,25px);margin:42px auto 25px}.gallery-frame{width:min(68vw,350px);padding:12px;background:#fffdf6;border:1px solid #bd9565;box-shadow:0 18px 40px #704b3c2c;transform:rotate(-1deg)}.gallery-photo{height:430px;position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(145deg,#b7c7b5,#f2dfcf 48%,#bd8c85);transition:background .4s}.gallery-photo:before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#fff7 0,transparent 60%),linear-gradient(0deg,#735b4b33,transparent 55%)}.placeholder-couple{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:12px;color:#fff9;text-shadow:0 2px 12px #59463e}.placeholder-couple span{font:120px var(--serif)}.placeholder-couple small{font-size:8px;letter-spacing:3px}.photo-counter{position:absolute;bottom:14px;right:16px;color:#fff;font-size:8px;letter-spacing:2px}.frame-caption{font:italic 19px var(--serif);color:#8b6b5c;padding:12px 0 2px}.gallery-arrow{width:39px;height:39px;border:1px solid #bb966c;border-radius:50%;background:#fff9f0;color:#89664f;font:30px var(--serif);line-height:1}.gallery-arrow:hover{background:#fff}.gallery-thumbnails{display:flex;justify-content:center;gap:12px}.gallery-thumbnails button{width:46px;height:56px;border:1px solid #c5a37b;background:linear-gradient(145deg,#b8c9b7,#f1d8c7);padding:3px}.gallery-thumbnails button:nth-child(2){background:linear-gradient(145deg,#b88c83,#f2d8c1)}.gallery-thumbnails button:nth-child(3){background:linear-gradient(145deg,#c5b18c,#f4e4cc)}.gallery-thumbnails button:nth-child(4){background:linear-gradient(145deg,#aabbb0,#efd8cf)}.gallery-thumbnails span{height:100%;display:grid;place-items:center;background:#fff7;color:#76584b;font:12px var(--serif)}.gallery-thumbnails button.selected{outline:2px solid #a77c52;outline-offset:3px}.gallery-note{font-size:9px;color:#a28a7c;margin-top:20px}
+.rsvp{padding-top:110px;padding-bottom:130px}.rsvp-card{width:min(94vw,560px);margin:auto;padding:45px clamp(22px,6vw,55px);background:#fffdf8;border:1px solid #d8bd98;box-shadow:0 15px 45px #70513b13;position:relative}.rsvp-card:before{content:'';position:absolute;inset:8px;border:1px solid #edddc7;pointer-events:none}.rsvp-card .section-heading{margin-bottom:35px;position:relative}.rsvp-card .section-heading h2{font-size:clamp(43px,7vw,60px)}#rsvpForm{position:relative;display:grid;gap:18px}#rsvpForm>label{display:grid;gap:8px;font-size:9px;letter-spacing:2px;color:#967565}#rsvpForm input:not([type=radio]),#rsvpForm textarea{width:100%;padding:13px 12px;border:1px solid #e6d5c1;background:#fffaf4;border-radius:2px;color:#674b41;font-size:12px;letter-spacing:0;outline-color:#c49a6b}#rsvpForm fieldset{border:0;padding:0;margin:0;display:flex;gap:12px 24px;flex-wrap:wrap}#rsvpForm legend{font-size:9px;letter-spacing:2px;color:#967565;margin-bottom:12px}.radio-option{display:flex;align-items:center;gap:8px;font-size:11px;color:#80685b}.radio-option input{accent-color:#9a7258}.submit-button{border:0;border-radius:30px;background:#80594e;color:#fff8ef;padding:15px;letter-spacing:2px;font-size:9px;margin-top:5px}.submit-button span{padding-left:12px;color:#e6c998}.form-status{text-align:center;font-size:10px;color:#a18a7b;line-height:1.5}.rsvp-decoration{position:absolute;right:9%;top:10%;font-size:160px;color:#c9a67a18}
+.countdown{min-height:100svh;position:relative;overflow:hidden;display:grid;place-items:center;text-align:center;padding:100px 18px 110px;isolation:isolate;background:#e9c4bd}.countdown-art{object-position:center 60%;filter:saturate(.85)}.countdown-overlay{position:absolute;inset:0;background:linear-gradient(180deg,#f5d8d4bb,#f7e0d3b0 52%,#9e7773a6);z-index:-1}.countdown-content{position:relative;width:min(820px,100%);z-index:2}.countdown-content h2{font:clamp(48px,9vw,82px)/.9 var(--serif);font-weight:400;color:#74524a;margin:0 0 38px}.countdown-content h2 em{font-family:var(--script);font-size:1.22em;color:#a36f71}.count-grid{display:flex;justify-content:center;gap:clamp(8px,3vw,25px);margin:35px auto 28px}.count-item{width:clamp(66px,16vw,125px);aspect-ratio:1;border:1px solid #b58d60;border-radius:48% 48% 42% 42%;background:linear-gradient(#fffaf0eF,#f5e5d4eF);box-shadow:0 8px 22px #79514722;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}.count-item:before{content:'✧';position:absolute;top:-19px;color:#a98054;font-size:17px}.count-item strong{font:clamp(27px,5vw,43px) var(--serif);color:#80594e;font-weight:500}.count-item span{font-size:7px;letter-spacing:2px;color:#a17d6b}.closing-line{font:italic 25px/1.25 var(--serif);color:#805d56;margin:25px 0}.closing-line em{color:#a36f71}.lantern-button{border:1px solid #9f7959;border-radius:30px;padding:13px 20px;background:#fff8ed99;color:#765541;font-size:9px;letter-spacing:2px}.lantern-button span{font-size:15px;margin-left:12px}.with-love{font:italic 17px/1.5 var(--serif);color:#805d56;margin:35px 0 15px}.with-love strong{font:34px var(--script);font-weight:400}.closing-date{font-size:8px;letter-spacing:3px;color:#765b51}.floating-lanterns{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}.wish-lantern{position:absolute;bottom:-80px;color:#fff3cf;text-shadow:0 0 15px #fff0bd;font-size:38px;animation:rise 7s linear forwards}@keyframes rise{to{transform:translateY(-120vh) translateX(var(--drift));opacity:0}}.countdown footer{position:absolute;bottom:18px;left:0;right:0;color:#fff;font-size:8px;letter-spacing:3px;z-index:2;text-shadow:0 1px 6px #634a44}.countdown footer span{color:#e8a2a0}.reveal{opacity:0;transform:translateY(25px);transition:opacity .9s ease,transform .9s ease}.reveal.visible{opacity:1;transform:translateY(0)}.floating-petals{position:fixed;inset:0;z-index:30;pointer-events:none;overflow:hidden;contain:paint}.petal{position:absolute;top:-30px;width:var(--petal-size,9px);height:calc(var(--petal-size,9px) * 1.55);border-radius:90% 0 90% 0;background:var(--petal-color,#b95e78);opacity:var(--petal-opacity,.7);animation:petalFall var(--duration) linear infinite;animation-delay:var(--delay);left:var(--left);will-change:transform,opacity}@keyframes petalFall{to{transform:translate3d(var(--drift),110vh,0) rotate(650deg);opacity:.1}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+@media(max-width:700px){.intro-art{object-position:center center}.hero{padding-top:80px;padding-bottom:95px}.hero-art{object-position:54% center}.hero h1{font-size:clamp(66px,17vw,95px)}.hero-bottom{padding:0 14px;font-size:7px;letter-spacing:1px}.section-paper{padding-left:16px;padding-right:16px}.invitation{min-height:750px}.card-inner{min-height:520px;padding:50px 15px}.hanging-ornament:before{height:65px}.left-ornament{left:7%}.right-ornament{right:7%}.event-list{gap:18px}.event-card,.event-card.reverse{grid-template-columns:112px 1fr 25px;gap:15px;padding:14px 10px 14px 12px;min-height:200px}.event-art{height:160px}.art-halo{width:95px;height:95px}.art-symbol{font-size:75px}.art-flower{font-size:32px;right:9px;bottom:12px}.event-info h3{font-size:29px}.event-description{font-size:16px}.event-date{font-size:7px;letter-spacing:1px}.event-tag{font-size:6px;letter-spacing:1px}.event-number{font-size:20px}.gallery-frame{width:min(70vw,330px)}.gallery-photo{height:380px}.gallery-arrow{width:33px;height:33px;font-size:25px}.count-grid{gap:7px}.count-item{width:clamp(64px,19vw,90px)}.count-item span{font-size:6px;letter-spacing:1px}.countdown-content h2{font-size:clamp(47px,12vw,68px)}}
+@media(max-width:390px){.event-card,.event-card.reverse{grid-template-columns:92px 1fr 20px;gap:10px}.event-art{height:145px}.event-info h3{font-size:25px}.event-description{font-size:15px}.event-tag{font-size:5.5px}.gallery-photo{height:340px}.gallery-layout{gap:7px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+.gallery-photo.photo-two{background:linear-gradient(145deg,#b98b7d,#f0d8c5 48%,#a9b6a0)}.gallery-photo.photo-three{background:linear-gradient(145deg,#d2b98f,#f7e7d3 48%,#9e7b70)}.gallery-photo.photo-four{background:linear-gradient(145deg,#aabdb2,#f1d7cb 48%,#b98e87)}
+
+
+/* Traditional glowing paper lanterns: confined to the opening hero section only. */
+.hero-lantern-layer{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.hero-rising-lantern{position:absolute;bottom:-12%;width:var(--rise-size,52px);height:auto;opacity:0;filter:drop-shadow(0 0 7px #ffd98a88) drop-shadow(0 0 18px #ffc66a66);animation:traditionalLanternRise var(--rise-duration,20s) linear forwards;will-change:transform,opacity}
+.hero-rising-lantern img{display:block;width:100%;height:auto;object-fit:contain}
+.hero-copy,.hero-bottom{z-index:2}
+@keyframes traditionalLanternRise{0%{transform:translate3d(0,0,0) scale(.82);opacity:0}12%{opacity:.08}28%{opacity:.92;transform:translate3d(calc(var(--rise-drift,0px)*.22),-38vh,0) scale(1)}58%{opacity:.96;transform:translate3d(calc(var(--rise-drift,0px)*.62),-82vh,0) scale(1.02)}82%{opacity:.35}100%{transform:translate3d(var(--rise-drift,0px),-145vh,0) scale(.88);opacity:0}}
+@media(prefers-reduced-motion:reduce){.hero-lantern-layer{display:none}}
+
+/* Restore the delicate twinkling stars on the opening palace hero only. */
+.hero-stars{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.hero-stars i{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff8dc;box-shadow:0 0 5px 2px #fff0bd99,0 0 13px 3px #f4d89a55;opacity:.72;animation:heroStarTwinkle 3.8s ease-in-out infinite}
+.hero-stars i:nth-child(1){left:8%;top:16%;animation-delay:-.4s}.hero-stars i:nth-child(2){left:18%;top:31%;width:2px;height:2px;animation-delay:-2s}.hero-stars i:nth-child(3){left:29%;top:12%;animation-delay:-1.1s}.hero-stars i:nth-child(4){left:39%;top:25%;width:2px;height:2px;animation-delay:-2.7s}.hero-stars i:nth-child(5){left:51%;top:10%;animation-delay:-.8s}.hero-stars i:nth-child(6){left:63%;top:19%;width:2px;height:2px;animation-delay:-1.8s}.hero-stars i:nth-child(7){left:75%;top:11%;animation-delay:-3s}.hero-stars i:nth-child(8){left:88%;top:23%;width:2px;height:2px;animation-delay:-1.4s}.hero-stars i:nth-child(9){left:94%;top:39%;animation-delay:-2.2s}.hero-stars i:nth-child(10){left:12%;top:48%;width:2px;height:2px;animation-delay:-3.3s}.hero-stars i:nth-child(11){left:31%;top:43%;animation-delay:-1.6s}.hero-stars i:nth-child(12){left:70%;top:39%;width:2px;height:2px;animation-delay:-.2s}.hero-stars i:nth-child(13){left:82%;top:53%;animation-delay:-2.5s}.hero-stars i:nth-child(14){left:46%;top:48%;width:2px;height:2px;animation-delay:-3.6s}
+@keyframes heroStarTwinkle{0%,100%{opacity:.25;transform:scale(.65)}50%{opacity:.95;transform:scale(1.35)}}
+.hero-copy{z-index:2}
+
+/* Ornate invitation page: soft palace-to-paper transition */
+.invitation-ornate{isolation:isolate;overflow:hidden;min-height:980px;padding-top:145px;padding-bottom:130px;background:linear-gradient(180deg,#f9e9e5 0%,#fff8ee 23%,#fbf1e4 100%)}
+.invitation-backdrop{position:absolute;z-index:-1;inset:-35px 0 auto;height:360px;background:linear-gradient(180deg,#f8e5e4aa 0%,#fbf0e9d9 62%,#fff8ee 100%),url('assets/images/palace-watercolor.png') center 68%/cover no-repeat;filter:blur(13px);transform:scale(1.06);opacity:.62}
+.invitation-ornate:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#fff7ef22 0%,#fff8ef 46%,#f8eee3 100%);pointer-events:none}
+.invitation-ornate .invitation-card{width:min(84vw,570px);padding:11px;border:2px solid #bd8d65;border-radius:190px 190px 34px 34px / 150px 150px 34px 34px;background:linear-gradient(145deg,#fffaf0,#f9ead7);box-shadow:0 22px 60px #805d4326;z-index:2}
+.invitation-ornate .invitation-card:before{inset:7px;border:1px solid #d8b58d;border-radius:180px 180px 27px 27px / 142px 142px 27px 27px}
+.invitation-ornate .card-inner{min-height:730px;margin:7px;padding:105px 25px 45px;border:1px solid #e0c39e;border-radius:174px 174px 22px 22px / 136px 136px 22px 22px;background:radial-gradient(ellipse at 50% 35%,#fffdf6 0%,#fff7e9 72%,#f5e5d0 100%)}
+.ganesh-emblem{width:62px;height:62px;margin:0 auto 12px;color:#bd8a55}.ganesh-emblem svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 1px #d8b27b66)}
+.invitation-ornate .eyebrow{color:#b78366;letter-spacing:2.5px;font-size:9px}.invitation-ornate .invite-copy{font-size:18px;margin:0 0 20px;color:#90766b}
+.couple-name-block h2{font:italic clamp(48px,7vw,68px)/.9 var(--serif);font-weight:400;color:#80584e;margin:0 0 7px}.parent-line{font:italic 14px/1.25 var(--serif);color:#9a8275;margin:0;letter-spacing:.2px}.name-ampersand{font:italic 32px var(--serif);color:#b88c5f;margin:12px 0}
+.invitation-ornate .ornamental-rule{margin:17px 0}.invitation-ornate .date-words strong{font-size:58px}.invitation-ornate .invite-blessing{margin-top:17px;font-size:16px}.invitation-ornate .card-bottom-flower{margin-top:10px}
+.jhoomar{position:absolute;z-index:3;top:-18px;width:clamp(115px,21vw,205px);height:auto;pointer-events:none;filter:drop-shadow(0 8px 8px #77583b18)}.jhoomar-left{left:2%;transform:rotate(-2deg)}.jhoomar-right{right:2%;transform:scaleX(-1) rotate(-2deg)}
+@media(max-width:700px){.invitation-ornate{min-height:900px;padding-top:130px;padding-bottom:100px}.invitation-ornate .invitation-card{width:min(88vw,480px)}.invitation-ornate .card-inner{min-height:690px;padding:100px 15px 38px}.jhoomar{width:clamp(95px,27vw,145px);top:-8px}.jhoomar-left{left:-2%}.jhoomar-right{right:-2%}.parent-line{font-size:12px}.ganesh-emblem{width:54px;height:54px}}
+.invitation-ornate .invitation-backdrop{z-index:0}
+.invitation-ornate:before{z-index:1}
+.invitation-ornate .section-index{z-index:4}
+
+
+/* Version 10: use the supplied full-page ornate invitation artwork as-is. */
+.invitation-frame-section{
+  position:relative;isolation:isolate;display:block;width:min(100%,941px);
+  aspect-ratio:941/1671;min-height:980px;max-height:1671px;margin:0 auto;
+  padding:0;overflow:hidden;background:#fff2df;
+}
+.invitation-frame-art{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;z-index:0;pointer-events:none}
+.invitation-frame-section:before{
+  display: none !important;
+}
+.invitation-text{
+  position:absolute;z-index:2;left:50%;top:52%;transform:translate(-50%,-50%);
+  width:69%;max-width:650px;text-align:center;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:0 8px;color:#80584e
+}
+.invitation-text .ganesh-emblem{width:68px;height:68px;margin:0 auto 22px;color:#b87924}
+.invitation-text .eyebrow{font-size:clamp(8px,.9vw,11px);letter-spacing:2px;color:#b78366;margin:0 0 12px}
+.invitation-text .invite-copy{font-size:clamp(15px,1.8vw,21px);line-height:1.45;margin:0 0 22px;color:#8f786b}
+.invitation-text .couple-name-block h2{font:italic clamp(43px,6vw,65px)/.94 var(--serif);font-weight:400;color:#80584e;margin:0 0 7px}
+.invitation-text .parent-line{font:italic clamp(10px,1.35vw,14px)/1.3 var(--serif);color:#9a8275;margin:0}
+.invitation-text .name-ampersand{font:italic 30px var(--serif);color:#b88c5f;margin:10px 0}
+.invitation-text .ornamental-rule{margin:15px 0;color:#b38b5e}
+.invitation-text .date-words{font-size:9px;letter-spacing:3px}
+.invitation-text .date-words strong{font-size:clamp(48px,5.8vw,62px)}
+.invitation-text .invite-blessing{font:italic clamp(13px,1.55vw,17px)/1.4 var(--serif);color:#94786a;margin:16px 0 13px}
+.map-button{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  padding:7px 17px;border:1px solid #c99c5f;border-radius:30px;
+  color:#a87937;background:#fff9edaa;text-decoration:none;
+  font:500 9px/1.2 "DM Sans",sans-serif;letter-spacing:2px;
+  transition:background .25s,transform .25s,box-shadow .25s
+}
+.map-button:hover{background:#fff4dc;transform:translateY(-2px);box-shadow:0 5px 15px #9b704522}
+.invitation-frame-section .section-index{z-index:3;bottom:22px}
+@media(max-width:700px){
+  .invitation-frame-section{width:100%;aspect-ratio:auto;height: min(1000px, 235vw);min-height:900px;max-height:none}
+  .invitation-frame-section:before{height:95px}
+  .invitation-text{top:52%;width:72%;padding:0 3px}
+  .invitation-text .ganesh-emblem{width:52px;height:52px;margin-bottom:13px}
+  .invitation-text .eyebrow{font-size:7px;letter-spacing:1.5px;margin-bottom:8px}
+  .invitation-text .invite-copy{font-size:14px;margin-bottom:14px}
+  .invitation-text .couple-name-block h2{font-size:46px}
+  .invitation-text .parent-line{font-size:10px}
+  .invitation-text .name-ampersand{font-size:25px;margin:7px 0}
+  .invitation-text .ornamental-rule{margin:10px 0}
+  .invitation-text .date-words{font-size:8px;letter-spacing:2px}
+  .invitation-text .date-words strong{font-size:48px}
+  .invitation-text .invite-blessing{font-size:13px;margin:12px 0 10px}
+  .map-button{font-size:8px;padding:6px 13px}
+}
+
+
+/* V11: latest full-page invitation artwork + precisely centred typography */
+.invitation-frame-section{
+  position:relative;isolation:isolate;display:block;width:min(100%,1024px);
+  aspect-ratio:2/3;height:auto;min-height:0;max-height:none;margin:0 auto;
+  padding:0;overflow:hidden;background:#f9e6e2;
+}
+.invitation-frame-art{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;z-index:0;pointer-events:none}
+.invitation-text{
+  position:absolute!important;z-index:2;left:50%!important;top:49%!important;
+  transform:translate(-50%,-50%)!important;width:68%;max-width:690px;
+  margin:0!important;padding:0 10px!important;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center!important;
+  opacity:1!important;visibility:visible!important;color:#80584e;
+}
+.invitation-text .ganesh-emblem{width:58px;height:58px;margin:0 auto 16px;color:#b87924}
+.invitation-text .eyebrow{font-size:clamp(8px,.85vw,11px);letter-spacing:2px;color:#b78366;margin:0 0 12px;text-align:center}
+.invitation-text .invite-copy{font-size:clamp(15px,1.6vw,20px);line-height:1.4;margin:0 0 20px;color:#8f786b;text-align:center}
+.invitation-text .couple-name-block{text-align:center;width:100%}
+.invitation-text .couple-name-block h2{font:italic clamp(43px,5.5vw,62px)/.92 var(--serif);font-weight:400;color:#80584e;margin:0 0 6px}
+.invitation-text .parent-line{font:italic clamp(10px,1.25vw,14px)/1.3 var(--serif);color:#9a8275;margin:0;text-align:center}
+.invitation-text .name-ampersand{font:italic 29px var(--serif);color:#b88c5f;margin:9px 0}
+.invitation-text .ornamental-rule{margin:12px 0;color:#b38b5e}
+.invitation-text .date-words{font-size:9px;letter-spacing:2.5px;text-align:center}
+.invitation-text .date-words strong{font-size:clamp(46px,5.3vw,60px)}
+.invitation-text .invite-blessing{font:italic clamp(12px,1.4vw,16px)/1.35 var(--serif);color:#94786a;margin:13px 0 10px;text-align:center}
+.map-button{display:inline-flex;align-items:center;justify-content:center;padding:7px 17px;border:1px solid #c99c5f;border-radius:30px;color:#a87937;background:#fff9edaa;text-decoration:none;font:500 9px/1.2 "DM Sans",sans-serif;letter-spacing:2px}
+/* Version 17: no artificial blur/fade at the bottom of the first-page artwork. */
+.hero:after{content:none!important}
+.hero h1 span:first-child::first-letter{text-transform:uppercase}
+@media(max-width:700px){
+  .invitation-frame-section{width:100%;aspect-ratio:2/3;height:auto;min-height:0}
+  .invitation-text{top:49%!important;width:70%;padding:0 4px!important}
+  .invitation-text .ganesh-emblem{width:43px;height:43px;margin-bottom:10px}
+  .invitation-text .eyebrow{font-size:6.5px;letter-spacing:1.3px;margin-bottom:7px}
+  .invitation-text .invite-copy{font-size:12px;line-height:1.35;margin-bottom:12px}
+  .invitation-text .couple-name-block h2{font-size:39px}
+  .invitation-text .parent-line{font-size:9px}
+  .invitation-text .name-ampersand{font-size:23px;margin:6px 0}
+  .invitation-text .ornamental-rule{margin:8px 0}
+  .invitation-text .date-words{font-size:7px;letter-spacing:1.8px}
+  .invitation-text .date-words strong{font-size:43px}
+  .invitation-text .invite-blessing{font-size:11px;margin:9px 0 8px}
+  .map-button{font-size:7px;padding:6px 12px}
+}
+
+
+/* V12: separate scenic background and transparent ornamental border artwork */
+.invitation-frame-section{
+  position:relative;isolation:isolate;display:block;
+  width:min(100%,1025px);aspect-ratio:1025/1534;height:auto;
+  min-height:0;max-height:none;margin:0 auto;padding:0;overflow:hidden;
+  background:#f8d9d7;
+}
+.invitation-frame-art{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:center center;z-index:0;pointer-events:none
+}
+.invitation-border-art{
+  position:absolute;z-index:1;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  height:97%;width:auto;max-width:96%;object-fit:contain;
+  pointer-events:none
+}
+.invitation-text{
+  position:absolute!important;z-index:2;left:50%!important;top:51%!important;
+  transform:translate(-50%,-50%)!important;width:57%;max-width:600px;
+  margin:0!important;padding:0 8px!important;display:flex;
+  flex-direction:column;align-items:center;justify-content:center;
+  text-align:center!important;opacity:1!important;visibility:visible!important;
+}
+.invitation-text .ganesh-emblem{display:none!important}
+.invitation-text .eyebrow{text-align:center}
+.invitation-text .invite-copy{text-align:center}
+.invitation-text .couple-name-block{text-align:center;width:100%}
+.invitation-text .couple-name-block h2{text-align:center}
+.invitation-text .parent-line{text-align:center}
+.invitation-text .date-words{text-align:center}
+.invitation-text .invite-blessing{text-align:center}
+@media(max-width:700px){
+ .invitation-frame-section{width:100%;aspect-ratio:1025/1534;height:auto;min-height:0}
+ .invitation-border-art{height:98%;max-width:98%}
+ .invitation-text{top:51%!important;width:59%;padding:0 3px!important}
+ .invitation-text .eyebrow{font-size:6px;letter-spacing:1px;margin-bottom:6px}
+ .invitation-text .invite-copy{font-size:11px;line-height:1.3;margin-bottom:10px}
+ .invitation-text .couple-name-block h2{font-size:clamp(30px,8vw,40px)}
+ .invitation-text .parent-line{font-size:8px}
+ .invitation-text .name-ampersand{font-size:21px;margin:5px 0}
+ .invitation-text .ornamental-rule{margin:7px 0}
+ .invitation-text .date-words{font-size:6px;letter-spacing:1.4px}
+ .invitation-text .date-words strong{font-size:38px}
+ .invitation-text .invite-blessing{font-size:10px;margin:7px 0}
+ .map-button{font-size:7px;padding:5px 10px}
+}
+
+/* V15: use the newly supplied complete page-two artwork (background + border). */
+.invitation-border-art{display:none!important}
+.invitation-frame-art{object-fit:cover!important;object-position:center center!important}
+.invitation-text{left:50%!important;top:50%!important;width:58%!important;max-width:600px!important;text-align:center!important}
+.invitation-text .couple-name-block,
+.invitation-text .couple-name-block h2,
+.invitation-text .parent-line,
+.invitation-text .eyebrow,
+.invitation-text .invite-copy,
+.invitation-text .date-words,
+.invitation-text .invite-blessing{text-align:center!important}
+@media(max-width:700px){
+  .invitation-text{top:50%!important;width:61%!important;padding:0 3px!important}
+}
+
+/* V16: page two fills one complete viewport, matching the opening page height. */
+.invitation-frame-section{
+  width:100%;
+  max-width:none;
+  aspect-ratio:auto;
+  height:100vh;
+  height:100svh;
+  min-height:100vh;
+  min-height:100svh;
+  max-height:none;
+  margin:0;
+  overflow:hidden;
+}
+.invitation-frame-art{
+  width:100%;
+  height:100%;
+  object-fit:cover!important;
+  object-position:center center!important;
+}
+.invitation-border-art{display:none!important}
+.invitation-text{
+  left:50%!important;
+  top:50%!important;
+  transform:translate(-50%,-50%)!important;
+  width:58%!important;
+  max-width:600px!important;
+}
+@media(max-width:700px){
+  .invitation-frame-section{
+    width:100%;
+    aspect-ratio:auto;
+    height:100vh;
+    height:100svh;
+    min-height:100vh;
+    min-height:100svh;
+  }
+  .invitation-frame-art{object-fit:cover!important;object-position:center center!important}
+  .invitation-text{top:50%!important;width:61%!important}
+}
+
+/* V18: invitation typography and devotional artwork, following the supplied reference. */
+.invitation-text{
+  gap:0;
+  width:60%!important;
+}
+.invitation-text .ganesh-image{
+  display:block;
+  width:clamp(42px,5.4vw,62px);
+  height:auto;
+  object-fit:contain;
+  margin:0 auto 9px;
+  filter:drop-shadow(0 2px 2px #9d6b2730);
+}
+.invitation-text .invite-blessing-heading{
+  margin:0 0 7px;
+  color:#d77d91;
+  font:italic clamp(15px,1.65vw,19px)/1.2 var(--serif);
+  text-align:center;
+}
+.invitation-text .invite-copy{
+  margin:0 0 8px!important;
+  color:#90766b;
+  font:clamp(14px,1.5vw,18px)/1.35 var(--serif)!important;
+  text-align:center;
+}
+.invitation-text .lotus-image{
+  display:block;
+  width:clamp(48px,5.6vw,66px);
+  height:auto;
+  object-fit:contain;
+  margin:0 auto 9px;
+}
+.invitation-text .couple-name-block h2{
+  font-size:clamp(44px,5.4vw,62px)!important;
+  margin-bottom:5px!important;
+}
+.invitation-text .parent-line{font-size:clamp(10px,1.2vw,14px)!important}
+.invitation-text .name-ampersand{font-size:29px!important;margin:7px 0!important}
+.invitation-text .ornamental-rule{margin:10px 0!important}
+.invitation-text .date-words{font-size:9px!important;letter-spacing:2px!important}
+.invitation-text .date-words strong{font-size:clamp(48px,5.5vw,62px)!important}
+.invitation-text .invite-blessing{font-size:clamp(13px,1.4vw,16px)!important;margin:10px 0 9px!important}
+.invitation-text .map-button{font-size:9px!important;padding:7px 14px!important}
+@media(max-width:700px){
+  .invitation-text{width:68%!important;top:50%!important;padding:0 2px!important}
+  .invitation-text .ganesh-image{width:43px;margin-bottom:6px}
+  .invitation-text .invite-blessing-heading{font-size:14px;margin-bottom:5px}
+  .invitation-text .invite-copy{font-size:13px!important;margin-bottom:6px!important}
+  .invitation-text .lotus-image{width:48px;margin-bottom:7px}
+  .invitation-text .couple-name-block h2{font-size:clamp(39px,10vw,47px)!important}
+  .invitation-text .parent-line{font-size:10px!important}
+  .invitation-text .name-ampersand{font-size:25px!important;margin:5px 0!important}
+  .invitation-text .ornamental-rule{margin:7px 0!important}
+  .invitation-text .date-words{font-size:7.5px!important;letter-spacing:1.5px!important}
+  .invitation-text .date-words strong{font-size:44px!important}
+  .invitation-text .invite-blessing{font-size:12px!important;margin:7px 0!important}
+  .invitation-text .map-button{font-size:8px!important;padding:6px 12px!important}
+}
+
+/* V19: enlarge the Ganesha artwork and all invitation typography. */
+.invitation-text .ganesh-image{width:clamp(58px,6.8vw,78px)!important;margin-bottom:10px!important}
+.invitation-text .invite-blessing-heading{font-size:clamp(17px,1.9vw,22px)!important;margin-bottom:8px!important}
+.invitation-text .invite-copy{font-size:clamp(16px,1.75vw,21px)!important;margin-bottom:9px!important}
+.invitation-text .lotus-image{width:clamp(56px,6.4vw,74px)!important;margin-bottom:10px!important}
+.invitation-text .couple-name-block h2{font-size:clamp(50px,6.1vw,70px)!important;margin-bottom:6px!important}
+.invitation-text .parent-line{font-size:clamp(12px,1.4vw,16px)!important}
+.invitation-text .name-ampersand{font-size:34px!important;margin:8px 0!important}
+.invitation-text .ornamental-rule{margin:11px 0!important}
+.invitation-text .date-words{font-size:11px!important;letter-spacing:2.2px!important}
+.invitation-text .date-words strong{font-size:clamp(54px,6vw,68px)!important}
+.invitation-text .invite-blessing{font-size:clamp(15px,1.65vw,19px)!important;margin:11px 0 10px!important}
+.invitation-text .map-button{font-size:10px!important;padding:8px 16px!important}
+@media(max-width:700px){
+  .invitation-text{width:68%!important; top:50%!important; padding:0 2px!important; gap:0}
+  .invitation-text .ganesh-image{width:40px!important; margin-bottom:4px!important}
+  .invitation-text .invite-blessing-heading{font-size:13px!important; margin-bottom:4px!important}
+  .invitation-text .invite-copy{font-size:12px!important; line-height:1.25!important; margin-bottom:4px!important}
+  .invitation-text .lotus-image{width:35px!important; margin-bottom:2px!important}
+  .invitation-text .couple-name-block h2{font-size:38px!important; margin-bottom:3px!important}
+  .invitation-text .parent-line{font-size:9px!important}
+  .invitation-text .name-ampersand{font-size:23px!important; margin:4px 0!important}
+  .invitation-text .ornamental-rule{margin:5px 0!important}
+  .invitation-text .date-words{font-size:7px!important; letter-spacing:1.3px!important}
+  .invitation-text .date-words strong{font-size:42px!important}
+  .invitation-text .invite-blessing{font-size:10px!important; line-height:1.25!important; margin:5px 0!important}
+  .invitation-text .map-button{font-size:8px!important; padding:5px 11px!important}
+}
+
+/* V20: restore the two floating/bouncing sparkle stars from Version 2 on the first page only. */
+.hero-lantern{
+  position:absolute;
+  z-index:2;
+  color:#fff2d5;
+  font-size:35px;
+  line-height:1;
+  text-shadow:0 0 18px #ffe7b8, 0 0 5px #fff7dc;
+  animation:float 5s ease-in-out infinite;
+  pointer-events:none;
+}
+.hero .lantern-a{top:20%;left:13%}
+.hero .lantern-b{top:31%;right:12%;animation-delay:2s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+
+/* Tiny warm twinkling stars now remain visible across every page/section. */
+.site-twinkle-stars{
+  position:fixed;
+  inset:0;
+  z-index:24;
+  pointer-events:none;
+  overflow:hidden;
+}
+.site-twinkle-stars i{
+  position:absolute;
+  width:3px;height:3px;border-radius:50%;
+  background:#fff8dc;
+  box-shadow:0 0 5px 2px #fff0bd99,0 0 13px 3px #f4d89a55;
+  opacity:.55;
+  animation:siteStarTwinkle 3.8s ease-in-out infinite;
+}
+.site-twinkle-stars i:nth-child(1){left:8%;top:16%;animation-delay:-.4s}
+.site-twinkle-stars i:nth-child(2){left:18%;top:31%;width:2px;height:2px;animation-delay:-2s}
+.site-twinkle-stars i:nth-child(3){left:29%;top:12%;animation-delay:-1.1s}
+.site-twinkle-stars i:nth-child(4){left:39%;top:25%;width:2px;height:2px;animation-delay:-2.7s}
+.site-twinkle-stars i:nth-child(5){left:51%;top:10%;animation-delay:-.8s}
+.site-twinkle-stars i:nth-child(6){left:63%;top:19%;width:2px;height:2px;animation-delay:-1.8s}
+.site-twinkle-stars i:nth-child(7){left:75%;top:11%;animation-delay:-3s}
+.site-twinkle-stars i:nth-child(8){left:88%;top:23%;width:2px;height:2px;animation-delay:-1.4s}
+.site-twinkle-stars i:nth-child(9){left:94%;top:39%;animation-delay:-2.2s}
+.site-twinkle-stars i:nth-child(10){left:12%;top:48%;width:2px;height:2px;animation-delay:-3.3s}
+.site-twinkle-stars i:nth-child(11){left:31%;top:43%;animation-delay:-1.6s}
+.site-twinkle-stars i:nth-child(12){left:70%;top:39%;width:2px;height:2px;animation-delay:-.2s}
+.site-twinkle-stars i:nth-child(13){left:82%;top:53%;animation-delay:-2.5s}
+.site-twinkle-stars i:nth-child(14){left:46%;top:48%;width:2px;height:2px;animation-delay:-3.6s}
+@keyframes siteStarTwinkle{
+  0%,100%{opacity:.18;transform:scale(.65)}
+  50%{opacity:.78;transform:scale(1.35)}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero .hero-lantern{animation:none}
+  .site-twinkle-stars i{animation:none;opacity:.35}
+}
+
+
+/* Satyanarayan Katha: ceremonial book-page treatment */
+.katha-book{
+  width:min(100%,620px);
+  min-height:900px;
+  margin:0 auto;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  isolation:isolate;
+  filter:drop-shadow(0 18px 26px #704b3c20);
+}
+.katha-book-frame{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:fill;
+  z-index:0;
+  pointer-events:none;
+}
+.katha-book-content{
+  position:relative;
+  z-index:1;
+  width:67%;
+  min-height:900px;
+  box-sizing:border-box;
+  padding:48px 0 105px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  text-align:center;
+}
+.katha-floral-quill{
+  display:block;
+  width:94%;
+  height:245px;
+  object-fit:contain;
+  margin:10px auto 8px;
+}
+.katha-book-content .event-date{
+  margin:4px 0 12px;
+  font-size:9px;
+  letter-spacing:1.8px;
+  color:#a17c5c;
+}
+.katha-book-content h3{
+  font:clamp(34px,4.5vw,47px)/1.05 var(--script);
+  font-weight:400;
+  color:#80564c;
+  margin:0 0 12px;
+}
+.katha-book-content .event-description{
+  font:italic 18px/1.45 var(--serif);
+  color:#94796b;
+  max-width:100%;
+  margin:0 auto 17px;
+}
+.katha-time{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  margin:2px auto 14px;
+  color:#94796b;
+}
+.katha-time span{
+  font-size:8px;
+  letter-spacing:2.5px;
+  color:#a17c5c;
+}
+.katha-time strong{
+  font:italic 17px var(--serif);
+  font-weight:400;
+  color:#80564c;
+}
+.katha-book-content .event-tag{
+  font-size:7px;
+  letter-spacing:1.2px;
+  color:#ae8a64;
+}
+.katha-book .event-number{
+  position:absolute;
+  right:17%;
+  bottom:8%;
+  z-index:2;
+  font:23px var(--serif);
+  color:#a78358;
+}
+@media(max-width:700px){
+  .katha-book{width:min(100%,500px);min-height:760px}
+  .katha-book-content{min-height:760px;width:67%;padding:42px 0 90px}
+  .katha-floral-quill{height:205px;width:100%;margin:6px auto 7px}
+  .katha-book-content .event-date{font-size:7px;letter-spacing:1px}
+  .katha-book-content h3{font-size:clamp(27px,7vw,36px)}
+  .katha-book-content .event-description{font-size:15px;line-height:1.4}
+  .katha-time strong{font-size:15px}
+  .katha-book-content .event-tag{font-size:6px;letter-spacing:.8px}
+}
+@media(max-width:390px){
+  .katha-book{min-height:700px}
+  .katha-book-content{min-height:700px;padding-top:38px;padding-bottom:82px;width:66%}
+  .katha-floral-quill{height:175px}
+  .katha-book-content .event-description{font-size:14px}
+}
+
+
+/* Version 27 refinement: compact ornamental Katha invitation */
+.katha-book{
+  width:min(100%,470px);
+  min-height:760px;
+  margin:0 auto;
+  filter:drop-shadow(0 12px 20px #704b3c18);
+}
+.katha-book-content{
+  width:67%;
+  min-height:760px;
+  padding:122px 0 104px;
+}
+.katha-floral-quill{
+  width:48%;
+  height:118px;
+  object-fit:contain;
+  margin:0 auto 14px;
+  transform-origin:50% 85%;
+  animation:katha-flower-bounce 2.8s ease-in-out infinite;
+}
+@keyframes katha-flower-bounce{
+  0%,100%{transform:translateY(0) scale(1)}
+  14%{transform:translateY(-9px) scale(1.025)}
+  28%{transform:translateY(0) scale(1)}
+  42%{transform:translateY(-4px) scale(1.012)}
+  56%{transform:translateY(0) scale(1)}
+}
+.katha-book-content .event-date{margin:0 0 10px;font-size:8px;letter-spacing:1.45px}
+.katha-book-content h3{font-size:clamp(30px,4vw,39px);margin:0 0 12px}
+.katha-book-content .event-description{font-size:16px;line-height:1.4;margin-bottom:14px}
+.katha-time{gap:4px;margin:0 auto 13px}
+.katha-time span{font-size:7px}
+.katha-time strong{font-size:16px}
+.katha-book-content .event-tag{font-size:6.5px;letter-spacing:1px}
+.katha-map-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  margin-top:16px;
+  padding:7px 17px;
+  border:1px solid #cba66e;
+  border-radius:30px;
+  color:#b18a50;
+  background:rgba(255,250,241,.72);
+  text-decoration:none;
+  font-size:8px;
+  letter-spacing:2px;
+  line-height:1;
+  transition:background .25s ease,transform .25s ease,box-shadow .25s ease;
+}
+.katha-map-button:hover{
+  background:#fff8e9;
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px #a7835826;
+}
+.katha-map-button span{font-size:12px;letter-spacing:0}
+.katha-book .event-number{font-size:18px;right:17%;bottom:8%}
+@media(max-width:700px){
+  .katha-book{width:min(100%,410px);min-height:690px}
+  .katha-book-content{width:66%;min-height:690px;padding:108px 0 92px}
+  .katha-floral-quill{width:48%;height:105px;margin-bottom:12px}
+  .katha-book-content .event-date{font-size:7px;letter-spacing:1px}
+  .katha-book-content h3{font-size:clamp(27px,7vw,34px)}
+  .katha-book-content .event-description{font-size:14px}
+  .katha-time strong{font-size:14px}
+  .katha-book-content .event-tag{font-size:5.8px;letter-spacing:.7px}
+  .katha-map-button{margin-top:13px;padding:7px 14px;font-size:7px}
+}
+@media(max-width:390px){
+  .katha-book{min-height:650px}
+  .katha-book-content{min-height:650px;padding-top:98px;padding-bottom:82px}
+  .katha-floral-quill{height:92px}
+}
+@media(prefers-reduced-motion:reduce){
+  .katha-floral-quill{animation:none}
+}
+
+
+/* Version 28: shorter ceremonial frame proportions */
+.katha-book{min-height:650px}
+.katha-book-content{min-height:650px;padding-top:88px;padding-bottom:88px}
+@media(max-width:700px){
+  .katha-book{min-height:590px}
+  .katha-book-content{min-height:590px;padding-top:78px;padding-bottom:78px}
+}
+@media(max-width:390px){
+  .katha-book{min-height:560px}
+  .katha-book-content{min-height:560px;padding-top:72px;padding-bottom:72px}
+}
+
+
+/* Version 29: replace the heading glyph divider with the supplied gold ornament */
+.heading-flourish{
+  margin-top:12px;
+  letter-spacing:0;
+  line-height:0;
+}
+.events-heading-ornament{
+  display:block;
+  width:min(100%,420px);
+  height:auto;
+  max-height:105px;
+  object-fit:contain;
+  margin:0 auto;
+}
+.katha-time span{font-size:7px;letter-spacing:2px}
+.katha-time strong{font-size:16px}
+@media(max-width:700px){
+  .events-heading-ornament{width:min(88%,350px);max-height:78px}
+  .heading-flourish{margin-top:10px}
+}
+
+
+/* Version 30: all celebration events use the same ceremonial book-page design */
+.events .event-list{
+  width:min(100%, 560px);
+  gap:34px;
+}
+.events .katha-book{
+  width:min(100%, 470px);
+}
+.events .katha-book-content h3{
+  max-width:100%;
+}
+@media(max-width:700px){
+  .events .event-list{width:100%;gap:26px}
+  .events .katha-book{width:min(100%,410px)}
+}
+
+/* Version 31: clarify that the RSVP phone number is optional */
+#rsvpForm .optional-field{
+  font-size:.82em;
+  font-weight:400;
+  letter-spacing:.04em;
+  opacity:.7;
+}
+
+
+/* Version 32 — two-photo Painted Moments gallery */
+.gallery{
+  position:relative;
+  text-align:center;
+  padding:78px 18px 105px;
+  overflow:hidden;
+  background-image:url('assets/images/painted-moments-background.png');
+  background-size:100% 100%;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.gallery-heading{position:relative;z-index:1}
+.gallery-heading h2{
+  font:clamp(46px,8vw,68px)/.98 var(--script);
+  font-weight:400;
+  color:#80584e;
+  margin:0 0 12px;
+}
+.gallery-heading>p:last-of-type{
+  font:italic 18px var(--serif);
+  color:#9c8173;
+  margin:0;
+}
+.gallery-layout{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:min(100%,470px);
+  margin:30px auto 0;
+  position:relative;
+  z-index:1;
+}
+.gallery-frame{
+  width:min(75vw,360px);
+  padding:0;
+  margin:0;
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  transform:none;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.gallery-photo{
+  width:100%;
+  height:auto;
+  aspect-ratio:630 / 993;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:visible;
+  background:transparent;
+  transition:opacity .25s ease, transform .35s ease;
+}
+.gallery-slide-image{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  filter:drop-shadow(0 12px 20px rgba(92,59,39,.14));
+  transition:opacity .25s ease, transform .35s ease;
+}
+.gallery-arrow{
+  flex:0 0 38px;
+  width:38px;
+  height:38px;
+  border:1px solid #d8b77e;
+  border-radius:50%;
+  background:rgba(255,250,241,.92);
+  color:#805b42;
+  font:29px/1 var(--serif);
+  display:grid;
+  place-items:center;
+  padding:0 0 3px;
+  cursor:pointer;
+  box-shadow:0 3px 10px rgba(95,63,43,.07);
+  transition:background .2s ease, transform .2s ease;
+}
+.gallery-arrow:hover{
+  background:#fff;
+  transform:scale(1.06);
+}
+.frame-caption{
+  margin:18px auto 10px;
+  color:#b18443;
+  font:italic 19px var(--serif);
+  text-align:center;
+}
+.gallery-indicators{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin:0 auto 22px;
+}
+.gallery-indicators button{
+  width:9px;
+  height:9px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:#d9c8bd;
+  cursor:pointer;
+  transition:width .2s ease, background .2s ease;
+}
+.gallery-indicators button.selected{
+  width:19px;
+  border-radius:9px;
+  background:#b88a42;
+}
+.gallery-thumbnails{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:14px;
+  margin:0 auto;
+}
+.gallery-thumbnails button{
+  width:62px;
+  height:86px;
+  padding:2px;
+  border:1px solid #d5b47c;
+  border-radius:7px;
+  overflow:hidden;
+  background:#fffaf2;
+  opacity:.72;
+  cursor:pointer;
+  transition:opacity .2s ease, transform .2s ease, outline .2s ease;
+}
+.gallery-thumbnails button.selected{
+  opacity:1;
+  outline:2px solid #b88a42;
+  outline-offset:2px;
+  transform:translateY(-2px);
+}
+.gallery-thumbnails img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+@media(max-width:520px){
+  .gallery{padding:65px 10px 90px}
+  .gallery-layout{gap:7px;margin-top:24px}
+  .gallery-frame{width:min(74vw,340px)}
+  .gallery-arrow{flex-basis:36px;width:36px;height:36px}
+  .frame-caption{margin-top:16px;font-size:18px}
+  .gallery-thumbnails{gap:12px}
+  .gallery-thumbnails button{width:58px;height:80px}
+}
+@media(prefers-reduced-motion:reduce){
+  .gallery-slide-image,.gallery-arrow,.gallery-thumbnails button{transition:none}
+}
+
+.gallery-heading-flourish{
+  width:min(78%,300px);
+  margin:18px auto 0;
+  line-height:0;
+}
+.gallery-heading-flourish img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+@media(max-width:520px){
+  .gallery-heading-flourish{width:min(76%,270px);margin-top:15px}
+}
+
+
+/* Version 33 — clean gallery edges and remove decorative flower watermark */
+.gallery:before,
+.gallery:after{
+  content:none !important;
+  display:none !important;
+}
+.gallery-frame,
+.gallery-photo{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+.gallery-slide-image{
+  background:transparent !important;
+  box-shadow:none !important;
+  filter:none !important;
+}
+
+
+/* Version 34 — remove all gallery wrapper/backdrop styling */
+.gallery-frame,
+.gallery-photo {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    transform: none !important;
+}
+
+.gallery-photo::before,
+.gallery-photo::after,
+.gallery-frame::before,
+.gallery-frame::after {
+    content: none !important;
+    display: none !important;
+}
+
+.gallery-slide-image {
+    display: block;
+    background: transparent !important;
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+
+/* Version 35 — softly rounded RSVP frame */
+.rsvp-card{
+  border-radius:22px;
+}
+.rsvp-card:before{
+  border-radius:15px;
+}
+/* Version 36 — keep music controls off the envelope opening screen.
+   The button becomes visible only after the invitation has opened. */
+.sound-toggle{
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+body.music-ready .sound-toggle{
+  display:flex;
+}
+/* Version 37 — indicate when the local wedding audio is playing */
+.sound-toggle.is-playing{
+  background:#80594e;
+  color:#fffaf4;
+}
